@@ -12,7 +12,7 @@ import java.util.Stack;
  *
  * @author Tyler Gnass
  */
-public class Client {
+public class Problem1 {
 
     /**
      * @param args the command line arguments
