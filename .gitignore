@@ -57,3 +57,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/Lab3 Problem 1/nbproject/private/
+/Lab3 Problem 1/build/
