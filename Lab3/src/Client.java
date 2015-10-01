@@ -21,26 +21,26 @@ public class Client {
         // TODO code application logic here
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a sentence");
-        String newSentence = input.next();
+        String newSentence = input.nextLine();
+        input.close();
         System.out.println("Reversing each word:");
         System.out.println(reverseString(newSentence));
     }
     
     private static String reverseString(String newString) {
         Stack<Character> stack = new Stack<>();
-        
+        String output = "";
         for(int i = 0; i < newString.length(); i++) {
-        	char character = newString.charAt(i);
-        	System.out.println(character);
-        	if(Character.isHighSurrogate(character)) {
-        		i++;
-        		if(i < newString.length()) {
-        			stack.push(newString.charAt(i));
-        		}
-        	}
+        	char ch = newString.charAt(i);
+        	stack.push(ch);
         }
         
-        return newString;
+        while(!stack.isEmpty()) {
+        	char ch = stack.pop();
+        	output = output + ch;
+        }
+        
+        return output;
     }
     
 }
