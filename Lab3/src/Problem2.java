@@ -12,30 +12,22 @@ public class Problem2 {
 		System.out.println("Enter seven words at the prompts.");
 		for(int i = 1; i <= 7; i++) {
 			System.out.print("Enter a word: ");
-			String word = input.next();
+			String word = input.nextLine();
 			stack.push(word);
-			input.nextLine();
 		}
+
 		input.close();
 
-		Stack<String> reverseStack = reverseWordOrder(stack);
 		System.out.println("In reverse order:");
-
-		for(int i = 0; i < stack.size(); i++) {
-			System.out.println(reverseStack.peek());
-			reverseStack.pop();
-		}
-
+		reverseWordOrder(stack);
 	}
 	
-	public static Stack<String> reverseWordOrder(Stack<String> stack) {
+	public static void reverseWordOrder(Stack<String> stack) {
 		Stack<String> reverseStack = new Stack<>();
-		for(int i = 0; i < stack.size(); i++) {
+		while(!stack.isEmpty()) {
+			System.out.println(stack.peek());
 			reverseStack.push(stack.peek());
 			stack.pop();
 		}
-		
-		return reverseStack;
 	}
-
 }
