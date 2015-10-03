@@ -1,6 +1,5 @@
 
-import java.util.Scanner;
-import java.util.Stack;
+import javax.swing.JFrame;
 
 /*
 ‘LAB #3
@@ -25,53 +24,25 @@ work, the ideas are still the other person's, and failure to give ‘credit cons
  ‘Cheating on lab reports falsifying data or submitting data not based on student's own work.
 */
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author Tyler Gnass
+ * @author Tyler
  */
-public class Problem1 {
+public class Problem3 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter a sentence");
-        String newSentence = input.nextLine();
-        input.close();
-        System.out.println("Reversing each word:");
-        String words[] = newSentence.split(" ");
-        for (int i = 0; i < words.length; i++) {
-        	String word = words[i];
-        	System.out.print(reverseString(word));
-        	
-        	if (i < words.length - 1) {
-        		System.out.print(" ");
-        	}
-        }
-    }
-    
-    private static String reverseString(String newString) {
-        Stack<Character> stack = new Stack<>();
-        String output = "";
-
-        for(int i = 0; i < newString.length(); i++) {
-        	stack.push(newString.charAt(i));
-        }
-        
-        while(!stack.isEmpty()) {
-        	Character ch = stack.pop();
-        	output = output + ch;
-        }
-        
-        return output;
+        StackGraphicsDemo stackDemo = new StackGraphicsDemo();
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().add(stackDemo);
+        frame.pack();
+        frame.setResizable(false);
+        frame.setTitle("Stack Graphics Demo");
+        frame.setVisible(true);
     }
     
 }
