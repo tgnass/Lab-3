@@ -24,19 +24,27 @@ public class Problem1 {
         String newSentence = input.nextLine();
         input.close();
         System.out.println("Reversing each word:");
-        System.out.println(reverseString(newSentence));
+        String words[] = newSentence.split(" ");
+        for (int i = 0; i < words.length; i++) {
+        	String word = words[i];
+        	System.out.print(reverseString(word));
+        	
+        	if (i < words.length - 1) {
+        		System.out.print(" ");
+        	}
+        }
     }
     
     private static String reverseString(String newString) {
         Stack<Character> stack = new Stack<>();
         String output = "";
+
         for(int i = 0; i < newString.length(); i++) {
-        	char ch = newString.charAt(i);
-        	stack.push(ch);
+        	stack.push(newString.charAt(i));
         }
         
         while(!stack.isEmpty()) {
-        	char ch = stack.pop();
+        	Character ch = stack.pop();
         	output = output + ch;
         }
         
