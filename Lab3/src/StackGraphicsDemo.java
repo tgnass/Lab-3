@@ -1,5 +1,6 @@
 
 import java.util.Stack;
+import stacks.ArrayStack;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,8 +18,10 @@ public class StackGraphicsDemo extends javax.swing.JPanel {
      * Creates new form StackGraphicsDemo
      */
     
-    private Stack<String> stack = new Stack<>();
+   // private Stack<String> stack = new Stack<>();
     
+	protected ArrayStack stack = new ArrayStack();
+	
     public StackGraphicsDemo() {
         initComponents();
     }
@@ -136,10 +139,7 @@ public class StackGraphicsDemo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void displayStack() {
-        jTextPane1.setText("");
-        for (int i = 0; i < stack.size(); i++) {
-            jTextPane1.setText(jTextPane1.getText() + stack.elementAt(i) + "\n");
-        }
+    	jTextPane1.setText(stack.toString());
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -164,7 +164,7 @@ public class StackGraphicsDemo extends javax.swing.JPanel {
         // TODO add your handling code here:
        
         if(!stack.isEmpty()) {
-            String info = stack.peek();
+            String info = (String) stack.top();
             stack.pop();
             jTextArea2.setText(jTextArea2.getText() + "\"" + info + "\"" + " was popped off the stack.\n");
             displayStack();

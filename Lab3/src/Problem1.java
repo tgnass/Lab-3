@@ -1,6 +1,8 @@
-
 import java.util.Scanner;
-import java.util.Stack;
+
+import stacks.ArrayStack;
+
+
 
 /*
 ‘LAB #3
@@ -59,7 +61,7 @@ public class Problem1 {
     }
     
     private static String reverseString(String newString) {
-        Stack<Character> stack = new Stack<>();
+       	ArrayStack stack = new ArrayStack();
         String output = "";
 
         for(int i = 0; i < newString.length(); i++) {
@@ -67,7 +69,7 @@ public class Problem1 {
         }
         
         while(!stack.isEmpty()) {
-        	Character ch = stack.pop();
+        	Character ch = (Character) stack.pop();
         	output = output + ch;
         }
         

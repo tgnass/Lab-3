@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import java.util.Stack;
 
+import stacks.ArrayStack;
+
 /*
 ‘LAB #3
 ‘Fall 2015
@@ -29,7 +31,8 @@ public class Problem2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Stack<String> stack = new Stack<>();
+	//	Stack<String> stack = new Stack<>();
+		ArrayStack stack = new ArrayStack();
 		Scanner input = new Scanner(System.in);
 		
 		System.out.println("Enter seven words at the prompts.");
@@ -45,11 +48,12 @@ public class Problem2 {
 		reverseWordOrder(stack);
 	}
 	
-    private static void reverseWordOrder(Stack<String> stack) {
-		Stack<String> reverseStack = new Stack<>();
+    private static void reverseWordOrder(ArrayStack stack) {
+	//	Stack<String> reverseStack = new Stack<>();
+		ArrayStack reverseStack = new ArrayStack();
 		while(!stack.isEmpty()) {
-			System.out.println(stack.peek());
-			reverseStack.push(stack.peek());
+			System.out.println(stack.top());
+			reverseStack.push(stack.top());
 			stack.pop();
 		}
 	}
